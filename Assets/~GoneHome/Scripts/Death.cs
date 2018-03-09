@@ -15,8 +15,8 @@ namespace GoneHome
         // triggers
         void OnTriggerEnter(Collider other)
         {
-            if(other.name == "DeathZone" || 
-                other.name == "Enemy")
+            if(other.name.Contains("DeathZone") || 
+                other.name.Contains("Enemy"))
             {
                 // rip
                 onDeath.Invoke();
