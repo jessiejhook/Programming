@@ -2,10 +2,10 @@
 # Wavefront file for 'Level_01_mesh_0002.obj'
 
 # Vertices (Count = 4)
-v -12.8 -6.56 0
-v -12.96 -6.56 0
-v -12.96 -6.4 0
-v -12.8 -6.4 0
+v -1280 -656 0
+v -1296 -656 0
+v -1296 -640 0
+v -1280 -640 0
 
 # Texture cooridinates (Count = 4)
 vt 0.4 0.5217391
