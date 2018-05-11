@@ -12,10 +12,6 @@ namespace GoneHome
         void Start()
         {
             Destroy(gameObject, lifeTime);
-
-
         }
-
-        
     }
 }
