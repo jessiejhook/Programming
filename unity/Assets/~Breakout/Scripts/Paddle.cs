@@ -12,6 +12,8 @@ namespace Breakout
             new Vector2(-1, 1),
             new Vector2(1, 1)
         };
+        // variable to see if we have fired
+        public bool hasfired;
 
         private Ball currentBall;
 
@@ -30,15 +32,23 @@ namespace Breakout
             Vector3 randomDir = directions[Random.Range(0, directions.Length)];
             // fire off ball in randomDirection
             currentBall.Fire(randomDir);
+            // state that we have fired
+            hasfired = true;
 
         }
 
         void CheckInput()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            // if we have not fired, allow us to fire 
+            if(!hasfired/* == false*/)
+                // hasfired = true, !hasfired = false. Can also be written as hasfired = false
             {
-                Fire();
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Fire();
+                }
             }
+           
         }
 
         void Movement()

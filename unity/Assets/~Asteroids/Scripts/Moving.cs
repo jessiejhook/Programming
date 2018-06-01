@@ -11,9 +11,20 @@ namespace Asteroids
 {
     public class Moving : MonoBehaviour
     {
+
         // Member Variables
-        public float rotationSpeed;
-        public float movementSpeed;
+        public float rotationSpeed = 20f; // units to travel per second
+        public float movementSpeed = 360f; // amount of rotation per second
+        private Rigidbody2D rigid; // reference to attached Rigidbody2D
+
+        // use this for initialization 
+        void Start()
+        {
+            // grab reference to rigidbody2D component
+            // NOTE: it gets this from the GameObject this script is attached to
+            rigid = GetComponent<Rigidbody2D>();
+
+        }
 
         void Movement()
         {
@@ -40,6 +51,13 @@ namespace Asteroids
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Rotate(Vector3.back, rotationSpeed * Time.deltaTime);
+            }
+
+            // Rotate Left
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+
             }
         }
 
