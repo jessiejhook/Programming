@@ -94,7 +94,7 @@ namespace Assessment1
         {
             if (col.gameObject.CompareTag("Bubbles"))
             {
-                col.gameObject.SetActive(false);
+                Destroy(col.gameObject);
                 // deactivates the game object "bubbles"
                 count = count + 1;
                 // adds value of 1 to the score as each bubble is collected
@@ -107,7 +107,7 @@ namespace Assessment1
         void SetCountText()
         {
             countText.text = "Count: " + count.ToString();
-            if (count >=3)
+            if (count >= 3)
             {
                 winText.text = "Well Done!"; // sets end game message
             }

@@ -14,7 +14,7 @@ namespace GoneHome
         void OnTriggerEnter(Collider other)
         {
             // Detect if other collider is player
-            if (other.name == "Player" &&
+            if (other.name.Contains("Player") &&
                 transform.childCount == 0)
             {
                 // Fire off our event (onTriggered)
